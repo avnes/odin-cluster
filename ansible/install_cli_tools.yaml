@@ -11,6 +11,9 @@
     k9s_version: 0.25.18
     kubectx_version: 0.9.1 # This old version supports multiple entries in KUBECONFIG
   tasks:
+    - name: "Install crictl"
+      include_role:
+        name: "avnes.crictl"
     - name: "Install flux"
       include_role:
         name: "avnes.flux"
