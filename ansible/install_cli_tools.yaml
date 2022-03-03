@@ -5,6 +5,7 @@
   become: yes
   vars:
     command_shell: zsh
+    crictl_version: 1.23.0
     flux_version: 0.27.3
     helm_version: 3.8.0
     k0sctl_version: 0.12.6
