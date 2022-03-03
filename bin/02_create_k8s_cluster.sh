@@ -3,17 +3,12 @@
 #################### CUSTOMIZATION STARTS ####################
 
 K0S_CLUSTER=${1:-valyria} # Or: K0S_CLUSTER=dragonstone
-export K0SCTL_VERSION='0.12.6' # https://github.com/k0sproject/k0sctl/releases
 export KUBECTX_VERSION=0.9.1 # https://github.com/ahmetb/kubectx/releases. This old version supports multiple entries in KUBECONFIG
 
 ##################### CUSTOMIZATION ENDS #####################
 
 # Don't mess with existing clusters (if any)
 unset KUBECONFIG
-
-# Download k0sctl for creating k0s cluster
-sudo --preserve-env=K0SCTL_VERSION curl --location --output /usr/local/bin/k0sctl "https://github.com/k0sproject/k0sctl/releases/download/v${K0SCTL_VERSION}/k0sctl-linux-x64"
-sudo chmod +x /usr/local/bin/k0sctl
 
 # Download kubectx
 sudo --preserve-env=KUBECTX_VERSION curl --location --output /usr/local/bin/kubectx "https://github.com/ahmetb/kubectx/releases/download/v${KUBECTX_VERSION}/kubectx"
