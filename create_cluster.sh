@@ -56,7 +56,7 @@ kubectl get pods -A
 echo "You should store /tmp/k0sctl-${K0S_CLUSTER}.yaml in source control"
 echo "Example:"
 echo "cp /tmp/k0sctl-${K0S_CLUSTER}.yaml ~/git/valyria-notes/config"
-echo "cd ~/git/valyria-notes/config"
+echo "cd ~/git/valyria-notes"
 echo "git add config/k0sctl-${K0S_CLUSTER}.yaml"
 echo "git commit -s -m 'Add k0sctl-${K0S_CLUSTER}.yaml'"
 echo "git push"
