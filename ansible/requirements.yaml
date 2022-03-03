@@ -1,3 +1,4 @@
 ---
 - src: avnes.helm
+- src: avnes.k0sctl
 - src: avnes.kubectl

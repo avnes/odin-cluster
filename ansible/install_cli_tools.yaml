@@ -6,10 +6,14 @@
   vars:
     command_shell: zsh
     helm_version: 3.8.0
+    k0sctl_version: 0.12.6
   tasks:
     - name: "Install Helm"
       include_role:
         name: "avnes.helm"
+    - name: "Install k0sctl"
+      include_role:
+        name: "avnes.k0sctl"
     - name: "Install kubectl"
       include_role:
         name: "avnes.kubectl"

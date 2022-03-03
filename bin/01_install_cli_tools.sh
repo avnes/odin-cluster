@@ -24,7 +24,7 @@ printf "\n\n############### Installing Ansible ###############\n"
 poetry install
 
 printf "\n\n############### Installing Ansible roles ###############\n"
-poetry run ansible-galaxy role install --roles-path ansible/roles --role-file ansible/requirements.yaml
+poetry run ansible-galaxy role install --roles-path ansible/roles --role-file ansible/requirements.yaml --force
 
 printf "\n\n############### Installing CLI tools ###############\n"
 poetry run ansible-playbook --inventory ansible/inventory/hosts.yaml ansible/install_cli_tools.yaml
