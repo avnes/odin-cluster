@@ -5,15 +5,27 @@
   become: yes
   vars:
     command_shell: zsh
+    flux_version: 0.27.3
     helm_version: 3.8.0
     k0sctl_version: 0.12.6
+    k9s_version: 0.25.18
+    kubectx_version: 0.9.1 # This old version supports multiple entries in KUBECONFIG
   tasks:
-    - name: "Install Helm"
+    - name: "Install flux"
+      include_role:
+        name: "avnes.flux"
+    - name: "Install helm"
       include_role:
         name: "avnes.helm"
     - name: "Install k0sctl"
       include_role:
         name: "avnes.k0sctl"
+    - name: "Install k9s"
+      include_role:
+        name: "avnes.k9s"
     - name: "Install kubectl"
       include_role:
         name: "avnes.kubectl"
+    - name: "Install kubectx"
+      include_role:
+        name: "avnes.kubectx"
