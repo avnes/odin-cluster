@@ -4,7 +4,17 @@
 cd "${0%/*}/.."
 
 printf "\n\n############### Installing Linux software requirements ###############\n"
-sudo dnf install -y python curl
+HOSTNAME_INFO=$(hostnamectl)
+
+if [[ $HOSTNAME_INFO =~ "Fedora Linux" ]]; then
+    sudo dnf install -y python curl
+elif [[ $HOSTNAME_INFO =~ "CentOS Stream" ]]; then
+    sudo dnf install -y python39 curl
+elif [[ $HOSTNAME_INFO =~ "Ubuntu" ]]; then
+   sudo apt update && sudo apt install -y python3 curl
+else
+    echo "Unsupported operating system"
+fi
 
 printf "\n\n############### Installing Poetry ###############\n"
 curl -sSL https://install.python-poetry.org | python3 -
