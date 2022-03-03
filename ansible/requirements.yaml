@@ -1,0 +1,3 @@
+---
+- src: avnes.helm
+- src: avnes.kubectl

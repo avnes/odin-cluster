@@ -1,0 +1,12 @@
+---
+- name: Install CLI tools (in alphabetical order)
+  hosts: all
+  connection: local
+  become: yes
+  tasks:
+    - name: "Install Helm"
+      include_role:
+        name: "avnes.helm"
+    - name: "Install kubectl"
+      include_role:
+        name: "avnes.kubectl"
