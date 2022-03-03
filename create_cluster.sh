@@ -40,8 +40,6 @@ if [[ ${#VM_NODES[@]} -eq 1 ]] ; then
     sed -i 's/^.*role: controller$/    role: "controller+worker"/g' /tmp/k0sctl-${K0S_CLUSTER}.yaml
 fi
 
-echo "You should store /tmp/k0sctl-${K0S_CLUSTER}.yaml in source control"
-
 # Create k0s cluster
 k0sctl apply --config /tmp/k0sctl-${K0S_CLUSTER}.yaml
 
@@ -54,3 +52,11 @@ chmod 600 ~/.kube/${K0S_CLUSTER}.config
 export KUBECONFIG=~/.kube/${K0S_CLUSTER}.config
 kubectl get nodes -o wide
 kubectl get pods -A
+
+echo "You should store /tmp/k0sctl-${K0S_CLUSTER}.yaml in source control"
+echo "Example:"
+echo "cp /tmp/k0sctl-${K0S_CLUSTER}.yaml ~/git/valyria-notes/config"
+echo "cd ~/git/valyria-notes/config"
+echo "git add config/k0sctl-${K0S_CLUSTER}.yaml"
+echo "git commit -s -m 'Add k0sctl-${K0S_CLUSTER}.yaml'"
+echo "git push"
