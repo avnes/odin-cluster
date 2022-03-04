@@ -10,6 +10,7 @@
     helm_version: 3.8.0
     k0sctl_version: 0.12.6
     k9s_version: 0.25.18
+    kubectl_version: latest
     kubectx_version: 0.9.1 # This old version supports multiple entries in KUBECONFIG
   tasks:
     - name: Configure compinit for all users
