@@ -3,16 +3,11 @@
 #################### CUSTOMIZATION STARTS ####################
 
 K0S_CLUSTER=${1:-valyria} # Or: K0S_CLUSTER=dragonstone
-export KUBECTX_VERSION=0.9.1 # https://github.com/ahmetb/kubectx/releases. This old version supports multiple entries in KUBECONFIG
 
 ##################### CUSTOMIZATION ENDS #####################
 
 # Don't mess with existing clusters (if any)
 unset KUBECONFIG
-
-# Download kubectx
-sudo --preserve-env=KUBECTX_VERSION curl --location --output /usr/local/bin/kubectx "https://github.com/ahmetb/kubectx/releases/download/v${KUBECTX_VERSION}/kubectx"
-sudo chmod +x /usr/local/bin/kubectx
 
 # Find VMs private key name and IPs
 
