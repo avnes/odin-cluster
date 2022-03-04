@@ -12,6 +12,17 @@
     k9s_version: 0.25.18
     kubectx_version: 0.9.1 # This old version supports multiple entries in KUBECONFIG
   tasks:
+    - name: Configure compinit for all users
+      ansible.builtin.lineinfile:
+        path: "/etc/zshenv"
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
+      with_items:
+        - regexp: "^autoload -Uz compinit"
+          line: "autoload -Uz compinit"
+        - regexp: "^compinit"
+          line: "compinit"
+      when: command_shell | lower == "zsh"
     - name: "Install crictl"
       include_role:
         name: "avnes.crictl"
