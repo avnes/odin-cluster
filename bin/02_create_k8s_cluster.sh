@@ -21,7 +21,7 @@ elif [[ $K0S_CLUSTER == 'dragonstone' ]]; then
     IFS=':' VM_NODES='10.0.0.34'
 fi
 
-# Create k0s configuration. Lowest IP becomes controller
+# Create k0s configuration. First IP becomes controller
 k0sctl init --k0s --cluster-name ${K0S_CLUSTER} --user ansible --key-path ${VM_PRIVATE_KEY} ${VM_NODES[@]} > /tmp/k0sctl-${K0S_CLUSTER}.yaml
 
 # With only one node, you need to edit /tmp/k0sctl-${K0S_CLUSTER}.yaml
