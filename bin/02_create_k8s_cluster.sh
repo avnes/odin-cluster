@@ -12,13 +12,13 @@ unset KUBECONFIG
 # Find VMs private key name and IPs
 
 if [[ $K0S_CLUSTER == 'valyria' ]]; then
-    cd ~/git/valyria-vm
+    cd ~/git/k0s-vm
     VM_PRIVATE_KEY=$(terraform output --raw ${K0S_CLUSTER}_vm_ssh_private_key_filename)
-    IFS=':' VM_NODES='10.0.0.23:10.0.0.20:10.0.0.22:10.0.0.21'
+    IFS=':' VM_NODES='10.0.1.20 10.0.1.21 10.0.1.22 10.0.1.23'
 elif [[ $K0S_CLUSTER == 'dragonstone' ]]; then
     cd ~/git/terraform-libvirt-vm
     VM_PRIVATE_KEY=$(terraform output --raw ssh_private_key_filename)
-    IFS=':' VM_NODES='10.0.0.34'
+    IFS=':' VM_NODES='10.0.1.10'
 fi
 
 # Create k0s configuration. First IP becomes controller
