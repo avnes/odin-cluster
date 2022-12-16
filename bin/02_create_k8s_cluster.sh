@@ -2,7 +2,7 @@
 
 #################### CUSTOMIZATION STARTS ####################
 
-K0S_CLUSTER=${1:-valyria} # Or: K0S_CLUSTER=dragonstone
+K0S_CLUSTER=${1:-odin} # Or: K0S_CLUSTER=freja
 
 ##################### CUSTOMIZATION ENDS #####################
 
@@ -11,11 +11,11 @@ unset KUBECONFIG
 
 # Find VMs private key name and IPs
 
-if [[ $K0S_CLUSTER == 'valyria' ]]; then
+if [[ $K0S_CLUSTER == 'odin' ]]; then
     cd ~/git/k0s-vm
     VM_PRIVATE_KEY=$(terraform output --raw k0s_vm_ssh_private_key_filename)
     IFS=' ' VM_NODES='10.0.1.20 10.0.1.21 10.0.1.22 10.0.1.23'
-elif [[ $K0S_CLUSTER == 'dragonstone' ]]; then
+elif [[ $K0S_CLUSTER == 'freja' ]]; then
     cd ~/git/terraform-libvirt-vm
     VM_PRIVATE_KEY=$(terraform output --raw ssh_private_key_filename)
     IFS=':' VM_NODES='10.0.1.10'
