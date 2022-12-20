@@ -18,7 +18,7 @@ if [[ $K0S_CLUSTER == 'odin' ]]; then
 elif [[ $K0S_CLUSTER == 'freja' ]]; then
     cd ~/git/terraform-libvirt-vm
     VM_PRIVATE_KEY=$(terraform output --raw vm_ssh_private_key_filename)
-    IFS=':' VM_NODES='10.0.1.10'
+    IFS=':' VM_NODES='192.168.1.110'
 fi
 
 # Create k0s configuration. First IP becomes controller
