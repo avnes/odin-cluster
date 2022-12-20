@@ -1,10 +1,10 @@
-# k0s-cluster
+# odin-cluster
 
-Script for setting up a Kubernetes cluster running k0s
+Script for setting up a Kubernetes cluster running odin
 
 ## Requirements
 
-- Virtual machines have been created using <https://github.com/avnes/k0s-vm>
+- Virtual machines have been created using <https://github.com/avnes/odin-vm>
 
 ## Run instructions
 

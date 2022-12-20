@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "k0s-cluster"
+name = "odin-cluster"
 version = "0.1.0"
 description = "Configure a Kubernetes cluster using k0"
 authors = ["Audun Nes <audun.nes@gmail.com>"]
