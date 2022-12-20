@@ -3,6 +3,8 @@
 #################### CUSTOMIZATION STARTS ####################
 
 K0S_CLUSTER=${1:-odin} # Or: K0S_CLUSTER=freja
+export K0S_CLUSTER
+K0S_VERSION=v1.24.8+k0s.0; export K0S_VERSION
 
 ##################### CUSTOMIZATION ENDS #####################
 
